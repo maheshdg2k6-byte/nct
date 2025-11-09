@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NCT Journal Design System - Modern Financial Theme */
+
+@layer base {
+  :root {
+    --background: 220 15% 2%;
+    --foreground: 210 20% 90%;
+
+    --card: 220 15% 4%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 220 15% 4%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 267 57% 50%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 216 20% 12%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 216 20% 12%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 158 64% 52%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 142 80% 42%;
+    --success-foreground: 210 20% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 20% 6%;
+
+    --border: 216 20% 15%;
+    --input: 216 20% 15%;
+    --ring: 267 57% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 216 20% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 267 57% 50%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 216 20% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 216 20% 18%;
+    --sidebar-ring: 267 57% 50%;
+
+    /* Glass effect variables */
+    --glass-bg: 216 20% 8% / 0.8;
+    --glass-border: 216 20% 18% / 0.3;
+    --glass-shadow: 0 8px 32px hsla(216, 20%, 4%, 0.3);
+  }
+
+  .dark {
+    --background: 220 15% 1%;
+    --foreground: 210 15% 95%;
+
+    --card: 220 15% 3%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 220 15% 3%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 267 57% 55%;
+    --primary-foreground: 210 15% 98%;
+
+    --secondary: 216 15% 8%;
+    --secondary-foreground: 210 15% 95%;
+
+    --muted: 216 15% 8%;
+    --muted-foreground: 210 8% 65%;
+
+    --accent: 158 64% 45%;
+    --accent-foreground: 210 15% 98%;
+
+    --destructive: 0 84% 62%;
+    --destructive-foreground: 210 15% 98%;
+
+    --success: 142 80% 45%;
+    --success-foreground: 210 15% 98%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 210 15% 3%;
+
+    --border: 216 15% 12%;
+    --input: 216 15% 12%;
+    --ring: 267 57% 55%;
+
+    --sidebar-background: 216 15% 7%;
+    --sidebar-foreground: 210 15% 88%;
+    --sidebar-primary: 267 57% 55%;
+    --sidebar-primary-foreground: 210 15% 98%;
+    --sidebar-accent: 216 15% 12%;
+    --sidebar-accent-foreground: 210 15% 92%;
+    --sidebar-border: 216 15% 15%;
+    --sidebar-ring: 267 57% 55%;
+
+    /* Glass effect variables */
+    --glass-bg: 216 15% 5% / 0.8;
+    --glass-border: 216 15% 15% / 0.3;
+    --glass-shadow: 0 8px 32px hsla(216, 15%, 2%, 0.4);
+  }
+
+  .light {
+    --background: 210 15% 97%;
+    --foreground: 210 25% 10%;
+
+    --card: 210 10% 99%;
+    --card-foreground: 210 25% 10%;
+
+    --popover: 210 10% 99%;
+    --popover-foreground: 210 25% 10%;
+
+    --primary: 267 57% 50%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 216 15% 93%;
+    --secondary-foreground: 210 25% 10%;
+
+    --muted: 216 15% 93%;
+    --muted-foreground: 210 12% 40%;
+
+    --accent: 158 64% 52%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 142 80% 42%;
+    --success-foreground: 210 20% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 25% 10%;
+
+    --border: 216 15% 90%;
+    --input: 216 15% 90%;
+    --ring: 267 57% 50%;
+
+    --sidebar-background: 210 10% 99%;
+    --sidebar-foreground: 210 25% 10%;
+    --sidebar-primary: 267 57% 50%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 216 15% 93%;
+    --sidebar-accent-foreground: 210 25% 10%;
+    --sidebar-border: 216 15% 90%;
+    --sidebar-ring: 267 57% 50%;
+
+    /* Glass effect variables */
+    --glass-bg: 210 10% 99% / 0.8;
+    --glass-border: 216 15% 90% / 0.3;
+    --glass-shadow: 0 8px 32px hsla(216, 15%, 75%, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Ensure all Radix UI floating elements appear above everything */
+  [data-radix-popper-content-wrapper],
+  [data-radix-dropdown-menu-content],
+  [data-radix-select-content],
+  [data-radix-popover-content],
+  [data-radix-context-menu-content],
+  [data-radix-menubar-content],
+  [data-radix-hover-card-content],
+  [data-radix-tooltip-content] {
+    z-index: 99999 !important;
+  }
+}
